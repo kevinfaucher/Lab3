@@ -47,4 +47,8 @@ public class Deck {
 	public Object getDeckCards() {
 		return deckCards;
 	}
+
+	public int DeckSize() {
+		return 52;
+	}
 }
