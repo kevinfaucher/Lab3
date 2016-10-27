@@ -40,8 +40,20 @@ public class Deck implements Serializable  {
 		Collections.shuffle(deckCards);
 	}
 
-
-
+    public Deck(int NbrOfJokers, ArrayList<Card> wilds) {
+        this(NbrOfJokers);
+ 
+        for (Card c : deckCards) {
+            for (Card Wild : wilds) {
+                if ((c.geteRank() == Wild.geteRank()) && (c.geteSuit() == Wild.geteSuit())) {
+                    c.setbWild(true);
+                }
+            }
+ 
+        }
+ 
+ 
+    }
 	 Deck(eSuit suit) {
 		int iCardNbr = 1;
 		for (eSuit eSuit : eSuit.values()) {
@@ -77,7 +89,7 @@ public class Deck implements Serializable  {
 	 * 
 	 * @return
 	 */
-	private int GetDeckSize() {
+	public int GetDeckSize() {
 		return deckCards.size();
 	}
 }

@@ -35,14 +35,14 @@ public class Deck_Test {
 	@Test
 	public void BuildDeckTest() {
 		Deck d = new Deck(0);
-		assertTrue(d.DeckSize() == 52);
+		assertTrue(d.GetDeckSize() == 52);
 	}
 
 	@Test
 	public void DeckDrawTest() throws DeckException {
 		Deck d = new Deck(0);
 		d.Draw();
-		assertTrue(d.DeckSize() == 51);
+		assertTrue(d.GetDeckSize() == 51);
 	}
 
 	@Test(expected = DeckException.class)
@@ -77,7 +77,7 @@ public class Deck_Test {
 		
 		Deck NewDeck = new Deck(0, Wilds);
 
-		for (int index = 0; index < NewDeck.DeckSize(); index++) {
+		for (int index = 0; index < NewDeck.GetDeckSize(); index++) {
 			if (NewDeck.getDeckCards().get(index).isbWild()) {
 				count += 1;
 			}
