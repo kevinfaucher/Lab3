@@ -182,7 +182,7 @@ public class Hand {
 		for (Hand h : hands) {
 			if ((h.getCardsInHand().get(iCardSub).isbWild() == true)
 					|| (h.getCardsInHand().get(iCardSub).geteSuit() == eSuit.Joker)) {
-				for (Card JokerDeckCard : CreatedDeck.getDeckCards()) {
+				for (Card JokerDeckCard : CreateDeck.getDeckCards()) {
 					Hand CreatedHand = new Hand();
 					for (int iCard = 0; iCard < 5; iCard++) {
 						if (iCardSub == iCard) {
